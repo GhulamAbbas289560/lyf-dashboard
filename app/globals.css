@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  background-color: #f8f8f9;
+  --primary: 27 115 163;
+}
+.container {
+  width: 1450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media screen and (max-width: 1550px) {
+  .container {
+    width: 88%;
+  }
+}
