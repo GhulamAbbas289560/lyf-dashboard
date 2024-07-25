@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
@@ -10,6 +11,9 @@ module.exports = {
     extend: {
       container: {
         center: true,
+      },
+      colors: {
+        primary: "rgba(var(--primary))",
       },
       keyframes: {
         "accordion-down": {

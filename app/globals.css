@@ -6,7 +6,7 @@ body {
   --primary: 27 115 163;
 }
 .container {
-  width: 1450px;
+  width: 1650px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
