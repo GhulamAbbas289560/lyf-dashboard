@@ -1,7 +1,10 @@
 import CardList from "./(components)/CardList";
+import CoughChart from "./(components)/CoughChart";
+import InhaleChart from "./(components)/InhaleChart";
 import MedicalHistory from "./(components)/MedicalHistory";
 import PatientDetails from "./(components)/PatientDetails";
 import PatientSkeleton from "./(components)/PatientSkeleton";
+import WaterChart from "./(components)/WaterChart";
 export default function AnalyticsPage() {
   return (
     <div className="container py-10">
@@ -18,7 +21,11 @@ export default function AnalyticsPage() {
         </div>
       </div>
       <h1 className="font-semibold py-2 border-b-[1px] text-xl">Insights</h1>
-      <div className="grid md:grid-cols-3"></div>
+      <div className="grid md:grid-cols-3 gap-7">
+        <InhaleChart />
+        <CoughChart />
+        <WaterChart />
+      </div>
     </div>
   );
 }
