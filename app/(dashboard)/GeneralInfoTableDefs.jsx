@@ -2,6 +2,19 @@
 import moment from "moment";
 import Image from "next/image";
 import { Checkbox } from "@/components/ui/checkbox";
+import { StatusBadge, DiseaseBadge } from "./TableBadges";
+import { Trash2 } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 const rawdata = [
   {
     _id: "66a4ce45ff59e6ed606d4563",
@@ -283,6 +296,39 @@ export const data = rawdata.map((item) => ({
   ...item,
   nameAndImage: `${item.name},${item.userImage}`,
 }));
+const HandleTrashClick = (rowData) => {
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger>
+        <Trash2
+          size={40}
+          className="text-red-700 hover:bg-red-500/10 p-2 rounded-full duration-500 cursor-pointer"
+        />
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <Trash2
+            size={45}
+            className="text-red-500 bg-red-500/10 p-2 rounded-full"
+          />
+          <AlertDialogTitle>Delete Patient?</AlertDialogTitle>
+          <AlertDialogDescription>
+            Are you sure you want to delete the patient named
+            <span className="text-red-700 font-medium">
+              {" " + rowData.rowData.original.name} ?
+            </span>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction className="bg-red-700 hover:bg-red-800">
+            Delete
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
+};
 export const columns = [
   {
     id: "select",
@@ -320,7 +366,14 @@ export const columns = [
     },
   },
 
-  { accessorKey: "diseases", header: "Diseases" },
+  {
+    accessorKey: "diseases",
+    header: "Diseases",
+    cell: ({ row }) => {
+      const temp = row.getValue("diseases");
+      return <DiseaseBadge input={temp} />;
+    },
+  },
   {
     accessorKey: "previousAppointment",
     header: "Previous Appointment",
@@ -339,5 +392,15 @@ export const columns = [
   {
     accessorKey: "status",
     header: "Status",
+    cell: ({ row }) => <StatusBadge input={row.getValue("status")} />,
+  },
+  {
+    accessorKey: "actions",
+    header: "",
+    cell: ({ row }) => (
+      <>
+        <HandleTrashClick rowData={row} />
+      </>
+    ),
   },
 ];

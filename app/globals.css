@@ -3,7 +3,7 @@
 @tailwind utilities;
 body {
   background-color: #f8f8f9;
-  --primary: 27 115 163;
+  --primary: 19 81 114;
 }
 .container {
   width: 1650px;

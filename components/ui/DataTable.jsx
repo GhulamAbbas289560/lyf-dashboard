@@ -1,3 +1,4 @@
+"use client";
 import PaginationComponent from "./PaginationComponent";
 import {
   flexRender,

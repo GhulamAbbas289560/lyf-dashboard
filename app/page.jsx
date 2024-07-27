@@ -1,30 +1,32 @@
-"use client";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Search } from "lucide-react";
-
 import DataTable from "@/components/ui/DataTable";
+
 import {
   columns as GeneralInfoColumns,
   data as GeneralInfoData,
 } from "./(dashboard)/GeneralInfoTableDefs";
 export default function Home() {
   return (
-    <div className="container rounded-md border">
-      <div className="p-4 border-b">
-        <h1 className="font-bold text-xl">Patients</h1>
-        <p className="text-black/50 font-medium">
-          Patient Details & Activity Log
-        </p>
+    <>
+      <div className="container">
+        <div className="flex flex-col py-4">
+          <h1 className="font-semibold text-xl">Mike Jani</h1>
+          <p className="text-black/50 font-medium">
+            Hi Doctor, take a look at your patients activities
+          </p>
+          <p className="font-bold py-6">charts@placeholder</p>
+        </div>
       </div>
-      <div className="">
-        <DataTable data={GeneralInfoData} columns={GeneralInfoColumns} />
+      <div className="container rounded-md border">
+        <div className="p-4 border-b">
+          <h1 className="font-bold text-xl">Patients</h1>
+          <p className="text-black/50 font-medium">
+            Patient Details & Activity Log
+          </p>
+        </div>
+        <div>
+          <DataTable data={GeneralInfoData} columns={GeneralInfoColumns} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

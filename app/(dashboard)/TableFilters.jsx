@@ -14,11 +14,17 @@ export default function TableFilters({ table, selectedRows }) {
       column.toggleSorting(value === "asc" ? false : true);
     }
   };
+  const handleShowOnly = (value) => {
+    const statusColumn = table.getColumn("status");
+    if (statusColumn) {
+      statusColumn.setFilterValue(value);
+    }
+  };
   return (
     <div className="flex justify-between px-4">
       <div className="tabs"></div>
       <div className="flex gap-2">
-        <div className="flex items-center gap-2 bg-black/5 rounded-md px-4 font-medium">
+        <div className="flex items-center gap-2 bg-gray-200/50 rounded-md px-4 font-medium">
           <Search className="text-black/20" />
           <input
             className="outline-none bg-transparent"
@@ -31,7 +37,7 @@ export default function TableFilters({ table, selectedRows }) {
             }
           />
         </div>
-        <Select>
+        <Select onValueChange={handleShowOnly}>
           <SelectTrigger className="w-[180px] font-medium">
             <SelectValue placeholder="Show Only" />
           </SelectTrigger>
@@ -59,7 +65,9 @@ export default function TableFilters({ table, selectedRows }) {
             <SelectItem value="attend">Mark Attend</SelectItem>
             <SelectItem value="missed">Mark Missed</SelectItem>
             <SelectItem value="cancelled">Mark Cancelled</SelectItem>
-            <SelectItem value="delete">Delete Selected</SelectItem>
+            <SelectItem className="text-red-700 font-semibold" value="delete">
+              Delete Selected
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>
