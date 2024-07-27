@@ -22,8 +22,8 @@ export default function AnalyticsPage() {
       </div>
       <h1 className="font-semibold py-2 border-b-[1px] text-xl">Insights</h1>
       <div className="grid md:grid-cols-3 gap-7">
-        <CoughChart />
         <InhaleChart />
+        <CoughChart />
         <WaterChart />
       </div>
     </div>
