@@ -21,10 +21,10 @@ export default function TableFilters({ table, selectedRows }) {
     }
   };
   return (
-    <div className="flex justify-between px-4">
+    <div className="flex flex-col md:flex-row justify-between px-4">
       <div className="tabs"></div>
-      <div className="flex gap-2">
-        <div className="flex items-center gap-2 bg-gray-200/50 rounded-md px-4 font-medium">
+      <div className="flex flex-wrap gap-2">
+        <div className="flex items-center gap-2 bg-gray-200/50 rounded-md px-4 py-3 md:py-0 font-medium">
           <Search className="text-black/20" />
           <input
             className="outline-none bg-transparent"

@@ -118,7 +118,7 @@ export function DiseaseBadge({ input }) {
   const common =
     "px-2 py-1 rounded-full text-xs border font-medium flex gap-1 items-center";
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex gap-2">
       {input.map((item, index) => (
         <div className="flex items-center" key={index}>
           {styleDiseaseBadge(item)}

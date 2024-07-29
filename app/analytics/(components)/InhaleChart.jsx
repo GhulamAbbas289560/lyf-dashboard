@@ -55,12 +55,11 @@ export default function InhaleChart() {
           <CustomLegend text={"Nebulizer"} color={"#924fe8"} />
         </div>
       </div>
-      <ChartContainer config={chartConfig} className="-ml-2">
+      <ChartContainer config={chartConfig} className="-ml-2 min-h-40">
         <BarChart accessibilityLayer data={chartData} barSize={10}>
           <CartesianGrid
             vertical={false}
             strokeDasharray="4 8" // This makes the grid lines dashed
-            verticalPoints={2}
           />
           <XAxis
             dataKey="day"
@@ -71,7 +70,7 @@ export default function InhaleChart() {
           />
           <YAxis
             tickLine={false}
-            tickMargin={0}
+            tickMargin={10}
             axisLine={false}
             tickFormatter={(value) => `${value} doses`}
           />
