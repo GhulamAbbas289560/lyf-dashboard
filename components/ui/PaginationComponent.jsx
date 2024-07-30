@@ -16,7 +16,7 @@ import {
 
 export default function PaginationComponent({ table }) {
   return (
-    <div className="flex items-center justify-between px-2">
+    <div className="flex flex-col md:flex-row gap-3 items-center justify-between px-2">
       <div className="flex-1 text-sm text-muted-foreground">
         {table.getFilteredSelectedRowModel().rows.length} of{" "}
         {table.getFilteredRowModel().rows.length} row(s) selected.
@@ -46,7 +46,7 @@ export default function PaginationComponent({ table }) {
           Page {table.getState().pagination.pageIndex + 1} of{" "}
           {table.getPageCount()}
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center flex-col md:flex-row space-x-2">
           <Button
             variant="outline"
             className="hidden h-8 w-8 p-0 lg:flex"

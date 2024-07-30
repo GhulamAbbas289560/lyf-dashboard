@@ -55,7 +55,7 @@ export default function InhaleChart() {
           <CustomLegend text={"Nebulizer"} color={"#924fe8"} />
         </div>
       </div>
-      <ChartContainer config={chartConfig} className="-ml-2 min-h-40">
+      <ChartContainer config={chartConfig} className="-ml-2 min-h-60 max-h-60">
         <BarChart accessibilityLayer data={chartData} barSize={10}>
           <CartesianGrid
             vertical={false}

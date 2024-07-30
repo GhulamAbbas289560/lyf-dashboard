@@ -37,7 +37,10 @@ export default function WaterChart() {
         </div>
         <div className="flex"></div>
       </div>
-      <ChartContainer config={chartConfig} className="-ml-10 mt-2">
+      <ChartContainer
+        config={chartConfig}
+        className="-ml-10 mt-2 min-h-60 max-h-60"
+      >
         <AreaChart accessibilityLayer data={chartData}>
           <CartesianGrid
             vertical={false}

@@ -1,5 +1,5 @@
 import DataTable from "@/components/ui/DataTable";
-
+import CardList from "./(dashboard)/(charts)/CardList";
 import {
   columns as GeneralInfoColumns,
   data as GeneralInfoData,
@@ -13,7 +13,9 @@ export default function Home() {
           <p className="text-black/50 font-medium">
             Hi Doctor, take a look at your patients activities
           </p>
-          <p className="font-bold py-6">charts@placeholder</p>
+          <div className="custom-scrollbar flex *:min-w-80 gap-4 overflow-auto py-4">
+            <CardList />
+          </div>
         </div>
       </div>
       <div className="container rounded-md border">

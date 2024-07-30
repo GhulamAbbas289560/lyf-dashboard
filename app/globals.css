@@ -3,7 +3,7 @@
 @tailwind utilities;
 body {
   background-color: #f8f8f9;
-  --primary: 19 81 114;
+  --primary: 27 115 163;
 }
 .container {
   width: 1650px;
@@ -15,4 +15,14 @@ body {
   .container {
     width: 88%;
   }
+}
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }

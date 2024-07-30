@@ -51,7 +51,7 @@ export function DiseaseBadge({ input }) {
       case "sugar":
         return (
           <p
-            className={`${common} bg-blue-500/10 border-blue-700 text-blue-700`}
+            className={`${common} bg-blue-500/10 border-blue-700/20 text-blue-700`}
           >
             Sugar
           </p>
@@ -60,7 +60,7 @@ export function DiseaseBadge({ input }) {
       case "breathing_problem":
         return (
           <p
-            className={`${common} bg-orange-500/10 border-orange-700 text-orange-700`}
+            className={`${common} bg-orange-500/10 border-orange-700/20 text-orange-700`}
           >
             Breathing Problem
           </p>
@@ -68,21 +68,23 @@ export function DiseaseBadge({ input }) {
       case "bp":
         return (
           <p
-            className={`${common} bg-indigo-500/10 border-indigo-700 text-indigo-700`}
+            className={`${common} bg-indigo-500/10 border-indigo-700/20 text-indigo-700`}
           >
             BP
           </p>
         );
       case "cancer":
         return (
-          <p className={`${common} bg-red-500/10 border-red-700 text-red-700`}>
+          <p
+            className={`${common} bg-red-500/10 border-red-700/20 text-red-700`}
+          >
             Cancer
           </p>
         );
       case "asthma":
         return (
           <p
-            className={`${common} bg-yellow-500/10 border-yellow-700 text-yellow-700`}
+            className={`${common} bg-yellow-500/10 border-yellow-700/20 text-yellow-700`}
           >
             Asthma
           </p>
@@ -90,7 +92,7 @@ export function DiseaseBadge({ input }) {
       case "diabetes":
         return (
           <p
-            className={`${common} bg-pink-500/10 border-pink-700 text-pink-700`}
+            className={`${common} bg-pink-500/10 border-pink-700/20 text-pink-700`}
           >
             Diabetes
           </p>
@@ -98,7 +100,7 @@ export function DiseaseBadge({ input }) {
       case "hypertension":
         return (
           <p
-            className={`${common} bg-purple-500/10 border-purple-700 text-purple-700`}
+            className={`${common} bg-purple-500/10 border-purple-700/20 text-purple-700`}
           >
             HyperTension
           </p>
@@ -106,7 +108,7 @@ export function DiseaseBadge({ input }) {
       case "arthritis":
         return (
           <p
-            className={`${common} bg-rose-500/10 border-rose-700 text-rose-700`}
+            className={`${common} bg-rose-500/10 border-rose-700/20 text-rose-700`}
           >
             Arthritis
           </p>

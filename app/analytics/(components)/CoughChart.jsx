@@ -55,7 +55,7 @@ export default function CoughChart() {
           <CustomLegend text={"Low"} color={"#63abfd"} />
         </div>
       </div>
-      <ChartContainer config={chartConfig} className="-ml-8 min-h-60">
+      <ChartContainer config={chartConfig} className="-ml-8 min-h-60 max-h-60">
         <BarChart accessibilityLayer data={chartData} barSize={10}>
           <CartesianGrid
             vertical={false}
