@@ -20,9 +20,7 @@ const fetchPatientData = async (patientId) => {
 
 export default async function AnalyticsPage({ params }) {
   const patientId = params.patientId;
-  console.log("patientId", patientId);
   const patientSingle = await fetchPatientData(patientId);
-  console.log("patient", patientSingle);
   return (
     <div className="container py-10">
       <CardList />

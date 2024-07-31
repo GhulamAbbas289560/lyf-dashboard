@@ -18,6 +18,7 @@ body {
 }
 .custom-scrollbar::-webkit-scrollbar {
   height: 8px;
+  width: 8px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -25,4 +26,14 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+}
+.prescription-form input,
+textarea {
+  @apply bg-white border-2 outline-none rounded-lg py-2 px-4 font-medium;
+}
+.prescription-form label {
+  @apply font-medium text-sm;
+}
+.field-wrapper {
+  @apply flex flex-col gap-2;
 }
