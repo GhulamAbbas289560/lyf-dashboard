@@ -7,7 +7,7 @@ const TextBox = ({ heading, text }) => {
     </div>
   );
 };
-export default function PatientDetails() {
+export default function PatientDetails({ patient }) {
   const patientData = [
     { heading: "Email", value: "corey18@gmail.com" },
     { heading: "Gender", value: "Male" },
@@ -19,14 +19,14 @@ export default function PatientDetails() {
     <div className="bg-white flex flex-col gap-3 py-5 px-5 rounded-lg border-[1px] h-full">
       <div className="flex gap-2 items-center">
         <Image
-          src={"/avatar.png"}
+          src={patient?.userImage}
           height={50}
           width={50}
           alt="Profile Picture"
         />
-        <h1 className="font-semibold">Corey Culhane</h1>
+        <h1 className="font-semibold">{patient?.name}</h1>
         <div className="bg-blue-100 text-blue-700 text-xs p-1 rounded-md px-2 font-semibold">
-          ID : 1829876935
+          ID : 829876935
         </div>
       </div>
       <div className="flex flex-col gap-3 bg-gray-100/60 p-4 px-6 rounded-md">

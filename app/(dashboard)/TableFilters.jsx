@@ -29,11 +29,9 @@ export default function TableFilters({ table, selectedRows }) {
           <input
             className="outline-none bg-transparent"
             placeholder="Search"
-            value={table.getColumn("nameAndImage")?.getFilterValue()}
+            value={table.getColumn("name")?.getFilterValue()}
             onChange={(event) =>
-              table
-                .getColumn("nameAndImage")
-                ?.setFilterValue(event.target.value)
+              table.getColumn("name")?.setFilterValue(event.target.value)
             }
           />
         </div>

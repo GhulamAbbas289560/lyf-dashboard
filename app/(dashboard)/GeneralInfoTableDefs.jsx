@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import moment from "moment";
 import Image from "next/image";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -15,42 +16,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-const rawdata = [
+export const data = [
   {
-    _id: "66a4ce45ff59e6ed606d4563",
-    name: "Demi Wilkinson",
-    userImage:
-      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450703/health_dashboard/icons/avatars/avatar3_z7nquu.svg",
-    diseases: ["sugar", "breating_problem"],
-    previousAppointment: "2024-07-09T16:24:00.000Z",
-    status: "attend",
-    nextAppointment: "2024-07-09T16:24:00.000Z",
-    __v: 0,
-  },
-  {
-    _id: "66a4ce45ff59e6ed606d4564",
-    name: "Candice Wu",
-    userImage:
-      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450719/health_dashboard/icons/avatars/avatar4_w0po48.svg",
-    diseases: ["sugar", "bp", "cancer"],
-    previousAppointment: "2024-07-09T16:24:00.000Z",
-    status: "missed",
-    nextAppointment: "2024-07-09T16:24:00.000Z",
-    __v: 0,
-  },
-  {
-    _id: "66a4ce45ff59e6ed606d4562",
-    name: "Lana Steiner",
-    userImage:
-      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450688/health_dashboard/icons/avatars/avatar1_invmzj.svg",
-    diseases: ["bp"],
-    previousAppointment: "2024-07-09T16:24:00.000Z",
-    status: "cancelled",
-    nextAppointment: "2024-07-09T16:24:00.000Z",
-    __v: 0,
-  },
-  {
-    _id: "66a4ce45ff59e6ed606d4561",
+    _id: "66a9ec9d230b6153322dd4e4",
     name: "Phoenix Baker",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450688/health_dashboard/icons/avatars/avatar1_invmzj.svg",
@@ -61,7 +29,18 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4560",
+    _id: "66a9ec9d230b6153322dd4e5",
+    name: "Lana Steiner",
+    userImage:
+      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450688/health_dashboard/icons/avatars/avatar1_invmzj.svg",
+    diseases: ["bp"],
+    previousAppointment: "2024-07-09T16:24:00.000Z",
+    status: "cancelled",
+    nextAppointment: "2024-07-09T16:24:00.000Z",
+    __v: 0,
+  },
+  {
+    _id: "66a9ec9d230b6153322dd4e3",
     name: "Olivia Rhye",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450686/health_dashboard/icons/avatars/avatar10_i3bjlz.svg",
@@ -72,18 +51,29 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4568",
-    name: "Andi Lane",
+    _id: "66a9ec9d230b6153322dd4e6",
+    name: "Demi Wilkinson",
     userImage:
-      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450687/health_dashboard/icons/avatars/avatar8_z2q96u.svg",
-    diseases: ["breathing_problem"],
+      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450703/health_dashboard/icons/avatars/avatar3_z7nquu.svg",
+    diseases: ["sugar", "breating_problem"],
     previousAppointment: "2024-07-09T16:24:00.000Z",
     status: "attend",
     nextAppointment: "2024-07-09T16:24:00.000Z",
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4567",
+    _id: "66a9ec9d230b6153322dd4e7",
+    name: "Candice Wu",
+    userImage:
+      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450719/health_dashboard/icons/avatars/avatar4_w0po48.svg",
+    diseases: ["sugar", "bp", "cancer"],
+    previousAppointment: "2024-07-09T16:24:00.000Z",
+    status: "missed",
+    nextAppointment: "2024-07-09T16:24:00.000Z",
+    __v: 0,
+  },
+  {
+    _id: "66a9ec9d230b6153322dd4ea",
     name: "Drew Cano",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450712/health_dashboard/icons/avatars/avatar7_bobbrf.svg",
@@ -94,7 +84,18 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4569",
+    _id: "66a9ec9d230b6153322dd4eb",
+    name: "Andi Lane",
+    userImage:
+      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450687/health_dashboard/icons/avatars/avatar8_z2q96u.svg",
+    diseases: ["breathing_problem"],
+    previousAppointment: "2024-07-09T16:24:00.000Z",
+    status: "attend",
+    nextAppointment: "2024-07-09T16:24:00.000Z",
+    __v: 0,
+  },
+  {
+    _id: "66a9ec9d230b6153322dd4ec",
     name: "Kate Morrison",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450707/health_dashboard/icons/avatars/avatar9_xoynn3.svg",
@@ -105,18 +106,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d456a",
-    name: "John Doe",
-    userImage:
-      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar1_vydzy8.svg",
-    diseases: ["asthma"],
-    previousAppointment: "2024-07-10T12:00:00.000Z",
-    status: "attend",
-    nextAppointment: "2024-07-11T14:30:00.000Z",
-    __v: 0,
-  },
-  {
-    _id: "66a4ce45ff59e6ed606d456b",
+    _id: "66a9ec9d230b6153322dd4ee",
     name: "Jane Smith",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar2_cu9zb6.svg",
@@ -127,7 +117,18 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d456c",
+    _id: "66a9ec9d230b6153322dd4ed",
+    name: "John Doe",
+    userImage:
+      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar1_vydzy8.svg",
+    diseases: ["asthma"],
+    previousAppointment: "2024-07-10T12:00:00.000Z",
+    status: "attend",
+    nextAppointment: "2024-07-11T14:30:00.000Z",
+    __v: 0,
+  },
+  {
+    _id: "66a9ec9d230b6153322dd4ef",
     name: "Michael Johnson",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar3_ks0hcj.svg",
@@ -138,18 +139,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d456e",
-    name: "William Brown",
-    userImage:
-      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar5_wxsgxy.svg",
-    diseases: ["asthma", "diabetes"],
-    previousAppointment: "2024-07-14T09:30:00.000Z",
-    status: "missed",
-    nextAppointment: "2024-07-15T13:30:00.000Z",
-    __v: 0,
-  },
-  {
-    _id: "66a4ce45ff59e6ed606d456d",
+    _id: "66a9ec9d230b6153322dd4f0",
     name: "Emily Davis",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar4_t0j6kv.svg",
@@ -160,7 +150,18 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d456f",
+    _id: "66a9ec9d230b6153322dd4f1",
+    name: "William Brown",
+    userImage:
+      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar5_wxsgxy.svg",
+    diseases: ["asthma", "diabetes"],
+    previousAppointment: "2024-07-14T09:30:00.000Z",
+    status: "missed",
+    nextAppointment: "2024-07-15T13:30:00.000Z",
+    __v: 0,
+  },
+  {
+    _id: "66a9ec9d230b6153322dd4f2",
     name: "Sophia Wilson",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar6_ur9snv.svg",
@@ -171,7 +172,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4570",
+    _id: "66a9ec9d230b6153322dd4f3",
     name: "James Martinez",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar7_yx9iou.svg",
@@ -182,7 +183,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4571",
+    _id: "66a9ec9d230b6153322dd4f4",
     name: "Isabella Anderson",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar8_lzjei5.svg",
@@ -193,7 +194,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4573",
+    _id: "66a9ec9d230b6153322dd4f6",
     name: "Mia Lewis",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar10_jwgn0i.svg",
@@ -204,7 +205,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4572",
+    _id: "66a9ec9d230b6153322dd4f5",
     name: "David Clark",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar9_zkeo8n.svg",
@@ -215,7 +216,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4574",
+    _id: "66a9ec9d230b6153322dd4f7",
     name: "Benjamin Robinson",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar11_gxze7k.svg",
@@ -226,7 +227,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4575",
+    _id: "66a9ec9d230b6153322dd4f8",
     name: "Amelia Walker",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar12_zkx5o4.svg",
@@ -237,7 +238,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4576",
+    _id: "66a9ec9d230b6153322dd4f9",
     name: "Lucas Harris",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar13_eaiuvw.svg",
@@ -248,18 +249,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4578",
-    name: "Jack Allen",
-    userImage:
-      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar15_xan8lx.svg",
-    diseases: ["asthma"],
-    previousAppointment: "2024-07-24T07:30:00.000Z",
-    status: "cancelled",
-    nextAppointment: "2024-07-25T11:45:00.000Z",
-    __v: 0,
-  },
-  {
-    _id: "66a4ce45ff59e6ed606d4577",
+    _id: "66a9ec9d230b6153322dd4fa",
     name: "Charlotte Young",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar14_fdxzgy.svg",
@@ -270,7 +260,18 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4566",
+    _id: "66a9ec9d230b6153322dd4fb",
+    name: "Jack Allen",
+    userImage:
+      "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450708/health_dashboard/icons/avatars/avatar15_xan8lx.svg",
+    diseases: ["asthma"],
+    previousAppointment: "2024-07-24T07:30:00.000Z",
+    status: "cancelled",
+    nextAppointment: "2024-07-25T11:45:00.000Z",
+    __v: 0,
+  },
+  {
+    _id: "66a9ec9d230b6153322dd4e9",
     name: "Orlando Diggs",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450735/health_dashboard/icons/avatars/avatar5_xqnr0f.svg",
@@ -281,7 +282,7 @@ const rawdata = [
     __v: 0,
   },
   {
-    _id: "66a4ce45ff59e6ed606d4565",
+    _id: "66a9ec9d230b6153322dd4e8",
     name: "Natali Craig",
     userImage:
       "https://res.cloudinary.com/danbfkvrk/image/upload/v1720450735/health_dashboard/icons/avatars/avatar5_xqnr0f.svg",
@@ -292,10 +293,6 @@ const rawdata = [
     __v: 0,
   },
 ];
-export const data = rawdata.map((item) => ({
-  ...item,
-  nameAndImage: `${item.name},${item.userImage}`,
-}));
 const HandleTrashClick = (rowData) => {
   return (
     <AlertDialog>
@@ -353,15 +350,17 @@ export const columns = [
     ),
   },
   {
-    accessorKey: "nameAndImage",
+    accessorKey: "name",
     header: "Name",
     cell: ({ row }) => {
-      const [name, image] = row.getValue("nameAndImage").split(",");
+      const { name, userImage, _id } = row.original;
       return (
-        <div className="flex gap-2 items-center font-medium">
-          <Image src={image} height={32} width={32} alt="Image" />
-          <h1>{name}</h1>
-        </div>
+        <Link href={`/analytics/${_id}`}>
+          <div className="flex gap-2 items-center font-medium">
+            <Image src={userImage} height={32} width={32} alt="Image" />
+            <h1>{name}</h1>
+          </div>
+        </Link>
       );
     },
   },
