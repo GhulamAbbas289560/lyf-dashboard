@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/hover-card";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-export default function PrescriptionPage() {
+export default function PrescriptionPopup({ children, data }) {
   const Topbar = () => {
     return (
       <div className="flex gap-5 items-center bg-[#f6f6f6] rounded-lg shadow p-4 border">
@@ -165,7 +165,7 @@ export default function PrescriptionPage() {
   };
   return (
     <Dialog>
-      <DialogTrigger>ass</DialogTrigger>
+      <DialogTrigger>{children}</DialogTrigger>
       <DialogContent className="p-0 max-w-[80%]">
         <div className="flex flex-col pt-px">
           <div className="flex items-center gap-3 p-4 border-b">

@@ -1,5 +1,5 @@
 import { ChevronDown, Plus } from "lucide-react";
-
+import PrescriptionPopup from "./PrescriptionPopup";
 export default function MedicalHistory() {
   const medicalHistoryData = [
     {
@@ -59,20 +59,19 @@ export default function MedicalHistory() {
           <Plus size={20} /> Add new
         </button>
       </div>
-      <div className="flex flex-col px-6">
+      <div className="flex flex-col">
         {medicalHistoryData.map((item, index) => (
-          <div
-            key={index}
-            className="flex gap-2 justify-between items-center border-b-[1px] py-4"
-          >
-            <div>
-              <h1 className="font-medium text-sm">{item.disease}</h1>
-              <p className="text-sm text-slate-600">{item.date}</p>
+          <PrescriptionPopup>
+            <div className="flex gap-2 justify-between items-center border-b-[1px] p-4 hover:bg-blue-500/10 duration-300">
+              <div className="flex flex-col items-start">
+                <h1 className="font-medium text-sm">{item.disease}</h1>
+                <p className="text-sm text-slate-600">{item.date}</p>
+              </div>
+              <h1 className="text-xs bg-gray-100 font-bold px-3 py-px rounded-md">
+                {item.time}
+              </h1>
             </div>
-            <h1 className="text-xs bg-gray-100 font-bold px-3 py-px rounded-md">
-              {item.time}
-            </h1>
-          </div>
+          </PrescriptionPopup>
         ))}
       </div>
     </div>

@@ -5,6 +5,7 @@ import MedicalHistory from "../(components)/MedicalHistory";
 import PatientDetails from "../(components)/PatientDetails";
 import PatientSkeleton from "../(components)/PatientSkeleton";
 import WaterChart from "../(components)/WaterChart";
+import PrescriptionPopup from "../(components)/PrescriptionPopup";
 const fetchPatientData = async (patientId) => {
   const res = await fetch(
     `https://patient-dashboard-backend.onrender.com/api/patients`,
@@ -32,6 +33,9 @@ export default async function AnalyticsPage({ params }) {
           <PatientSkeleton />
         </div>
         <div className="md:col-span-1">
+          <PrescriptionPopup data={"as"}>
+            <h1>as</h1>
+          </PrescriptionPopup>
           <MedicalHistory />
         </div>
       </div>
